@@ -1,0 +1,10 @@
+
+.info-pro li{
+    font-weight: bolder;
+    font-size: larger;
+    margin-top: 35px;
+}
+.info-pro li span{
+    font-weight:400;
+    text-transform: capitalize;
+}

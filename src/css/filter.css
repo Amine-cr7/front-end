@@ -1,0 +1,18 @@
+.filter-section .type{
+    /* transition: transform 0.3s ease-in-out; */
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0), 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+    background-color: #292C35;
+    color: white;
+}
+.filter-section {
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0), 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+    margin-left: 10px;
+    background-color: #17181D;
+}
+/* .filter-section .type:hover{
+    transform: scale(0.9);
+    border: 1px solid rgb(196, 178, 178);
+    border-radius: 20px;
+} */

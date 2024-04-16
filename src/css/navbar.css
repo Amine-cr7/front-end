@@ -1,0 +1,44 @@
+#search {
+    position: relative;
+    display: inline-block;
+    
+}
+.navbar-brand img{
+    max-width: 100px;
+}
+#search > input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 460px;
+    
+    border-bottom: 1px solid black;
+}
+
+#search > input:focus{
+    outline: none;
+    border-bottom: 1px solid black;
+}
+#search > i {
+    position: absolute;
+    
+    left: 95%;
+    color: #555;
+    
+}
+.container ul{
+    gap: 50px;
+}
+.nav-item a{
+    border-radius: 30px;
+}
+.nav-item a:hover {
+    background-color:lightsteelblue;
+    border-radius: 30px;
+}
+.fav-length{
+    position: relative;
+    
+    bottom: 10px;
+    color: red;
+}

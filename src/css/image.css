@@ -1,0 +1,14 @@
+
+  
+.card-img  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+.image-control{
+    width: 100%;
+}
