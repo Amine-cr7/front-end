@@ -1,0 +1,18 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+body {
+    font-family: 'Open Sans', sans-serif;
+    max-height: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+  .content {
+    flex: 1; 
+  }
+  
+  .footer {
+    flex-shrink: 0; 
+  }
+  

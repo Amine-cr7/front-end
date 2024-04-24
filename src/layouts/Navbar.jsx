@@ -6,13 +6,18 @@ import useFetch from '../api/useFetch'
 export default function Navbar() {
   const navigate = useNavigate()
   const user = JSON.parse(localStorage.getItem('user_info'));
-  // const [favlength, setFavlength] = useState(0);
-  // const favorites = JSON.parse(localStorage.getItem('favorites')) || {};
-  // const length = Object.values(favorites).filter(value => value === true).length;
-  // useEffect(() => {
-  //   setFavlength(length);
-  // }, [favorites]);
-  const produits = useFetch(`http://localhost:8000/api/fav/${user && user.id}`)
+  const [len,setLen] = useState(0)
+  const [lenCart,setLenCart] = useState(0)
+  useEffect(()=>{
+    fetch(`http://localhost:8000/api/fav/${user?.id || ""}`)
+    .then(res => res.json())
+    .then(data => setLen(data.length))
+  },[user])
+  useEffect(()=>{
+    fetch(`http://localhost:8000/api/cart/${user?.id || ""}`)
+    .then(res => res.json())
+    .then(data => setLenCart(data.length))
+  },[])
   return (
     <div>
       <nav className='navbar navbar-expand-lg '>
@@ -27,15 +32,16 @@ export default function Navbar() {
           
           <ul className='navbar-nav'>
             <li className='nav-item'>
-              <Link to={user ? `/fav/${user.id}` : "/login"} className='text-black nav-link'>
+              <Link to={user ? "/fav" : "/login"} className='text-black nav-link'>
                 <i className="fas fa-heart fs-5"></i>
-               {produits && <span className='fav-length'>{produits.length != 0 ? produits.length  : ""}</span>}
+                <span className='fav-length'>{len != 0 ? len  : ""}</span>
               </Link>
               
             </li>
             <li className='nav-item'>
-              <Link to={""} className='text-black nav-link'>
+              <Link to={user ? "/cart" : "/login"} className='text-black nav-link'>
                 <i className="fa-solid fa-bag-shopping fs-5"></i>
+                <span className='fav-length'>{lenCart != 0 ? lenCart  : ""}</span>
               </Link>
             </li>
             {!localStorage.getItem('user_info') ?

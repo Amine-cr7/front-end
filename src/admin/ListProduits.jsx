@@ -8,12 +8,13 @@ import useFetch from '../api/useFetch';
 function ListProduits() {
     
     const [categorieId, setCategorieId] = useState('');
-    const produits = useFetch("http://localhost:8000/api/produits")
-    const categories = useFetch("http://localhost:8000/api/categories")
+    const { data: produits, isPending, err } = useFetch("http://localhost:8000/api/produits")
+    const { data: categories } = useFetch("http://localhost:8000/api/categories")
     const produit_cat = produits && produits.filter(item => item.categorie_id == categorieId)
     return (
         <div className='w-100'>
-
+            {err && <div>{err}</div>}
+            {isPending && <div>Loading ...</div>}
             <div className="d-flex justify-content-between">
                 <h1>List Produits</h1>
                 <div>

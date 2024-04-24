@@ -14,7 +14,7 @@ function AddProduct() {
     const [saison,setSaison] = useState('')
     const [image,setImage] = useState('')
     const [type,setType] = useState('')
-    const categories = useFetch("http://localhost:8000/api/categories")
+    const { data: categories } = useFetch("http://localhost:8000/api/categories")
     const handle_submit = async (e) => {
         e.preventDefault()
         const formData = new FormData();
